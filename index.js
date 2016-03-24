@@ -21,7 +21,7 @@ if (!error && response.statusCode == 200) {
          titleArray.push({ "name" : $(element).text().trim() });
          
        });
-       console.log(titleArray.name);
+       
 
       // var links = $('.title a').map(function(index, element) {
       //   return {link: $(this).text(), url: $(this).attr("href")}
