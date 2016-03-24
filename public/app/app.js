@@ -31,7 +31,7 @@ angular.module('RestaurantApp', ['ui.router', 'RestaurantCtrl'])
     .state('allRestaurants', {
       url: '/restaurants',
       templateUrl: 'app/views/allRestaurants.html',
-      controller: 'RestaurantsCtrl'
+      controller: 'AllRestaurantsCtrl'
     })
     .state('404', {
       url: '/404',
