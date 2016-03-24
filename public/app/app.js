@@ -1,4 +1,4 @@
-angular.module('RestaurantApp', ['ui.router', 'RestaurantCtrl'])
+angular.module('RestaurantApp', ['ui.router', 'RestaurantCtrls'])
 
 .config([
   '$stateProvider',
@@ -11,7 +11,6 @@ angular.module('RestaurantApp', ['ui.router', 'RestaurantCtrl'])
     .state('home', {
       url: '/',
       templateUrl: 'app/views/home.html',
-      controller: 'HomeCtrl'
     })
     .state('login', {
       url: '/login',
