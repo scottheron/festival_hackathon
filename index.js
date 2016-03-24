@@ -7,7 +7,7 @@ var app = express();
 var secret = "dinosaurs";
 var mongoose = require('mongoose');
 var User = require('./models/user');
-mongoose.connect('mongodb://localhost/restaurants');
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/restaurants');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
