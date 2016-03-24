@@ -17,11 +17,11 @@ request('http://srw.seattletimes.com/#/', function (error, response, data) {
 if (!error && response.statusCode == 200) {
       var $ = cheerio.load(data);
 
-       $('a.post-title').each(function(index, element) {
-         titleArray.push({ "name" : $(element).text().trim() });
-         
-       });
+      $('tbody .post-title').each(function(index, element) {
+        titleArray.push({ "name" : $(element).text().trim() });
        
+      });
+      console.log(titleArray);
 
       // var links = $('.title a').map(function(index, element) {
       //   return {link: $(this).text(), url: $(this).attr("href")}
