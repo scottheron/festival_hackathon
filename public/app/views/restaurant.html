@@ -1,7 +1,6 @@
-<h1>{{ restaurant.name }}</h1>
+<h1>{{ restaurant.cuisine }} - {{ restaurant.neighborhood }} - {{ restaurant.meal }}</h1>
 
-<div class="container">
-  <h3>{{ restaurant.cuisine }}</h3>
-  <h2>{{ restaurant.neighborhood }}</h2>
-  <h3>{{ restaurant.meal }}</h3>
+<div class="container" ng-repeat='restaurant in restaurants track by $index'>
+  <h1>{{ restaurant.name }}</h1>
+  <h2>{{ restaurant.link }}</h2>
 </div>

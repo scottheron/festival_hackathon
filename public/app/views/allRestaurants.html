@@ -1,0 +1,9 @@
+<h1>Participating Restaurants</h1>
+
+<div class="well" ng-repeat="restaurant in restaurants track by $index">
+  <h2>{{ restaurant.name }}</h2>
+  <h3>{{ restaurant.cuisine }}</h3>
+  <h3>{{ restaurant.neighborhood }}</h3>
+  <h3>{{ restaurant.meal }}</h3>
+  <h3>{{ restaurant.link }}</h3>
+</div>
