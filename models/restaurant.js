@@ -4,7 +4,8 @@ var RestaurantSchema = new mongoose.Schema({
   name: String,
   cuisine: String,
   neighborhood: String,
-  meal: String
+  meal: String,
+  link: String
 });
 
 
