@@ -14,7 +14,7 @@ angular.module('RestaurantCtrls', ['RestaurantServices'])
   $scope.restaurant = {};
 
   Restaurant.get({id: $stateParams.id}, function success(data) {
-    $scope.rerestaurant = data;
+    $scope.restaurant = data;
   }, function error(data) {
     console.log(data);
   });
