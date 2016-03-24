@@ -7,7 +7,30 @@ var app = express();
 var secret = "dinosaurs";
 var mongoose = require('mongoose');
 var User = require('./models/user');
+var request = require('request');
+var cheerio = require('cheerio');
+var titleArray = [];
+
 mongoose.connect('mongodb://localhost/restaurants');
+
+request('http://srw.seattletimes.com/#/', function (error, response, data) {
+if (!error && response.statusCode == 200) {
+      var $ = cheerio.load(data);
+
+       $('a.post-title').each(function(index, element) {
+         titleArray.push({ "name" : $(element).text().trim() });
+         
+       });
+       console.log(titleArray.name);
+
+      // var links = $('.title a').map(function(index, element) {
+      //   return {link: $(this).text(), url: $(this).attr("href")}
+      // }).get();
+
+      //console.log(data);
+
+    }
+});
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
