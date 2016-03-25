@@ -16,7 +16,7 @@ router.route('/')
   .post(function(req, res) {
 
     console.log(req.body);
-    Restaurant.create(titleArray, function(err, restaurant) {
+    Restaurant.create(req.body, function(err, restaurant) {
       if (err) return res.status(500).send(err);
       res.send(restaurant);
     });
