@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname, 'public')));
 
-mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/restaurants');
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/api/restaurants');
 
 app.use('/api/restaurants', expressJWT({secret: secret})); //using middleware on api/recipes, passing in our secret, protecting this route
 app.use('/api/users', expressJWT({secret: secret}) //same as above unless posting as seen on below line, which allows you to make an account
