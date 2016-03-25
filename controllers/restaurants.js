@@ -15,25 +15,8 @@ router.route('/')
   })
   .post(function(req, res) {
 
-    request('https://news.ycombinator.com/', function (error, response, data) {
-    if (!error && response.statusCode == 200) {
-      var $ = cheerio.load(data);
-
-      // $('.title a').each(function(index, element) {
-      //   console.log($(element).attr("href"))
-      // })
-
-      var links = $('.title a').map(function(index, element) {
-        return {link: $(this).text(), url: $(this).attr("href")}
-      }).get();
-
-      console.log(links);
-
-    }
-  });
-   
     console.log(req.body);
-    Restaurant.create(req.body, function(err, restaurant) {
+    Restaurant.create(titleArray, function(err, restaurant) {
       if (err) return res.status(500).send(err);
       res.send(restaurant);
     });

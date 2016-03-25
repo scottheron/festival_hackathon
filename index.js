@@ -7,30 +7,33 @@ var app = express();
 var secret = "dinosaurs";
 var mongoose = require('mongoose');
 var User = require('./models/user');
+var Restaurant = require('./models/restaurant');
 var request = require('request');
 var cheerio = require('cheerio');
 var titleArray = [];
 
 mongoose.connect('mongodb://localhost/restaurants');
 
-request('http://srw.seattletimes.com/#/', function (error, response, data) {
-if (!error && response.statusCode == 200) {
-      var $ = cheerio.load(data);
+if (titleArray.length == 0) {
+  request('http://srw.seattletimes.com/#/', function (error, response, data) {
+  if (!error && response.statusCode == 200) {
+        var $ = cheerio.load(data);
 
-      $('tbody .post-title').each(function(index, element) {
-        titleArray.push({ "name" : $(element).text().trim() });
-       
+        $('tbody tr').each(function(index, element) {
+          titleArray.push({ "name" : $(element).children('td').children('.post-title').text().trim(), 
+                            "cuisine" : $(element).attr('data-cuisine'),
+                            "neighborhood" :  $(element).attr('data-neighborhood'), 
+                            "meal" : $(element).attr('data-meals'),
+                            "link" : $(element).children('td').children('.post-title').attr('href')});
+        });
+        console.log(titleArray);
+
+      }
+      Restaurant.create(titleArray, function(err, restaurant) {
+        if (err) console.log(err);
       });
-      console.log(titleArray);
-
-      // var links = $('.title a').map(function(index, element) {
-      //   return {link: $(this).text(), url: $(this).attr("href")}
-      // }).get();
-
-      //console.log(data);
-
-    }
-});
+  });
+}
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
