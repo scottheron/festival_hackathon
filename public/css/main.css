@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+@import url(https://fonts.googleapis.com/css?family=Roboto:100);
 html {
 	height:100%;
 	width: 100%;
@@ -61,3 +62,43 @@ div#home p#logo img.center-block {
 .btn:hover {
 	background-color: #77A1AF;
 }
+
+div#signup {
+	background-image: url(https://us-east.manta.joyent.com/condenast/public/cnt-services/production/2014/10/06/54330e33e764c812492ba62d_food-photography-tips-2048-1152.jpg);
+	background-repeat:no-repeat;
+	background-size: cover;
+	height: 100vh;
+	width: 100%;
+}
+
+#signupLegend {
+	font-family: 'Roboto', sans-serif;
+	color: white;
+	font-size: 40px;
+	text-align: center;
+
+}
+
+div#loginPg {
+	background-image: url(http://www.secondnaturegourmet.com/wp-content/uploads/2015/03/164606-13016551-NOHM_43485_jpg.jpg);
+	background-repeat:no-repeat;
+	background-size: cover;
+	height: 100vh;
+	width: 100%;
+}
+
+#loginLegend {
+	color: white;
+	font-family: 'Roboto', sans-serif;
+	text-align: center;
+	font-size: 40px;
+}
+
+
+
+
+
+
+
+
+
