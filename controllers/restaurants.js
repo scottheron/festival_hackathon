@@ -4,8 +4,6 @@ var router = express.Router();
 var request = require('request');
 var cheerio = require('cheerio');
 
-
-
 router.route('/')
   .get(function(req, res) {
     Restaurant.find(function(err, restaurants) {
@@ -41,6 +39,5 @@ router.route('/:id')
       res.send({'message': 'success'});
     });
   });
-
 
 module.exports = router;
