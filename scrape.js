@@ -1,3 +1,17 @@
+var express = require('express');
+var bodyParser = require('body-parser');
+var path = require('path');
+var expressJWT = require('express-jwt');
+var jwt = require('jsonwebtoken');
+var app = express();
+var secret = "dinosaurs";
+var mongoose = require('mongoose');
+var User = require('./models/user');
+var Restaurant = require('./models/restaurant');
+var request = require('request');
+var cheerio = require('cheerio');
+var titleArray = [];
+
 mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/restaurants');
 
 if (titleArray.length == 0) {
