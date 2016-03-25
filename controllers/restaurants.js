@@ -1,6 +1,10 @@
 var express = require('express');
 var Restaurant = require('../models/restaurant');
 var router = express.Router();
+var request = require('request');
+var cheerio = require('cheerio');
+
+
 
 router.route('/')
   .get(function(req, res) {
@@ -10,7 +14,9 @@ router.route('/')
     });
   })
   .post(function(req, res) {
-    Restaurant.create(req.body, function(err, restaurant) {
+
+    console.log(req.body);
+    Restaurant.create(titleArray, function(err, restaurant) {
       if (err) return res.status(500).send(err);
       res.send(restaurant);
     });
