@@ -1,0 +1,17 @@
+#loginLegend, #signupLegend {
+  font-size: 30px;
+}
+
+#loginPg {
+  margin-left: 25%;
+  margin-right: 25%;
+  max-width: 50%;
+  text-align: center;
+}
+
+#signupPg {
+  margin-left: 25%;
+  margin-right: 25%;
+  max-width: 50%;
+  text-align: center;
+}

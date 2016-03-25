@@ -20,8 +20,6 @@ app.use('/api/restaurants', expressJWT({secret: secret})); //using middleware on
 app.use('/api/users', expressJWT({secret: secret}) //same as above unless posting as seen on below line, which allows you to make an account
 .unless({path: ['/api/users'], method: 'post'}));
 
-
-
 app.use('/api/restaurants', require('./controllers/restaurants'));
 app.use('/api/users', require('./controllers/users'));
 
