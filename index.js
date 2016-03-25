@@ -7,16 +7,14 @@ var app = express();
 var secret = "dinosaurs";
 var mongoose = require('mongoose');
 var User = require('./models/user');
-<<<<<<< HEAD
 var Restaurant = require('./models/restaurant');
 var request = require('request');
 var cheerio = require('cheerio');
 var titleArray = [];
 
-mongoose.connect('mongodb://localhost/restaurants');
-=======
+
 mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/restaurants');
->>>>>>> master
+
 
 if (titleArray.length == 0) {
   request('http://srw.seattletimes.com/#/', function (error, response, data) {
