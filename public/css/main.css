@@ -94,11 +94,51 @@ div#loginPg {
 	font-size: 40px;
 }
 
+/* Styling for show all restaurants list */
 
+#restaurantsList {
+	background-image: url('http://proof.nationalgeographic.com/files/2014/09/140903-paley-food-grid1.jpg');
+	text-align: center;
+	color: white;
+	background-size: cover;
+	background-repeat: repeat-y;
+	width: 100%;
+}
 
+#restaurantsList h2 {
+	display: inline;
+}
 
+#restaurantsHeader {
+	font-size: 3.5em;
+	display: inline;
+}
 
+div.restaurantsContainer {
+	margin-top: 2%;
+}
 
+#restaurantsList div a {
+	display: block;
+}
 
+#restaurantsList a {
+	color: #66DEFF;
+}
 
+div.restaurantTitle {
+	width: 100vw;
+	margin-left: -15px;
+}
 
+span.glyphicon {
+    font-size: 2em;
+}
+
+span.left {
+	padding-right: 2%;
+}
+
+span.right {
+	padding-left: 2%;
+}
