@@ -1,0 +1,63 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+html {
+	height:100%;
+	width: 100%;
+}
+
+body {
+	height: 100%;
+	width: 100%;
+}
+
+body div.opacity {
+	background-color: rgba(0, 0, 0, 0.7);
+	height: 100%;
+	width: 100%;
+	background-size: cover;
+}
+
+div.form-group {
+	height: 20px;
+	width: 200px;
+	display: inline-block;
+	font-family: 'Roboto', sans-serif;
+	text-align: center;
+	margin: 0 auto;
+}
+
+
+div#home {
+	background-image: url(http://d3lp4xedbqa8a5.cloudfront.net/s3/digital-cougar-assets/BauerCorporate/2014/04/30/5180/Gourmet_Traveller_header_image_1.jpg?maxHeight=600&maxWidth=1200&valign=Center&align=Center&scale=both&mode=crop&format=jpg&quality=70);
+	background-repeat:no-repeat;
+	background-size: cover;
+	height: 100vh;
+	width: 100%;
+}
+
+div#home p#logo img.center-block {
+	height: 500px;
+	width: 750px;
+	text-align: center;
+	margin: 0 auto;
+  
+}
+
+.form-group label {
+	color: white;
+	font-size: 20px;
+	text-align: center;
+}
+
+.navbar {
+	margin: 0;
+	border-radius: 0;
+}
+
+.btn {
+	background-color: black;
+	border: white;
+}
+
+.btn:hover {
+	background-color: #77A1AF;
+}
