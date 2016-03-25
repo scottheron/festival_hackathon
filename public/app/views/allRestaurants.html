@@ -1,9 +1,89 @@
-<h1>Participating Restaurants</h1>
+<div id="restaurantsList">
+  <div class="container opacity">
+    <span class="glyphicon glyphicon-star left"></span>
+    <h1 id="restaurantsHeader">Participating Restaurants</h1>
+    <span class="glyphicon glyphicon-star right">   </span>
+    <br />
 
-<div class="well" ng-repeat="restaurant in restaurants track by $index">
+<!-- <div class="well" ng-repeat="restaurant in restaurants track by $index">
   <h2>{{ restaurant.name }}</h2>
   <h3>{{ restaurant.cuisine }}</h3>
   <h3>{{ restaurant.neighborhood }}</h3>
   <h3>{{ restaurant.meal }}</h3>
   <h3><a href="{{ restaurant.link }}">{{ restaurant.link }}</a></h3>
-</div>
+  <hr />
+</div> -->
+    <div class="restaurantsContainer">
+
+      <div class="col-sm-12 restaurantTitle">
+        <h1>
+          <a href="{{ restaurant.link }}">
+            RESTAURANT NAME
+          </a>
+        </h1>
+      </div>
+      <div class="row">
+        <div class="col-sm-3 col-sm-offset-1">
+          <span class="left glyphicon glyphicon-globe"></span>
+          <h2>Cuisine</h2>
+        </div>
+        <div class="col-sm-4">
+          <span class="left glyphicon glyphicon-map-marker"></span>
+          <h2>Neighborhood</h2>
+        </div>
+        <div class="col-sm-4">
+          <span class="left glyphicon glyphicon-time"></span>
+          <h2>Meal</h2>
+        </div>
+      </div>
+      <hr />
+
+      <div class="col-sm-12 restaurantTitle">
+        <h1>
+          <a href="{{ restaurant.link }}">
+            RESTAURANT NAME
+          </a>
+        </h1>
+      </div>
+      <div class="row">
+        <div class="col-sm-3 col-sm-offset-1">
+          <span class="left glyphicon glyphicon-globe"></span>
+          <h2>Cuisine</h2>
+        </div>
+        <div class="col-sm-4">
+          <span class="left glyphicon glyphicon-map-marker"></span>
+          <h2>Neighborhood</h2>
+        </div>
+        <div class="col-sm-4">
+          <span class="left glyphicon glyphicon-time"></span>
+          <h2>Meal</h2>
+        </div>
+      </div>
+      <hr />
+
+      <div class="col-sm-12 restaurantTitle">
+        <h1>
+          <a href="{{ restaurant.link }}">
+            RESTAURANT NAME
+          </a>
+        </h1>
+      </div>
+      <div class="row">
+        <div class="col-sm-3 col-sm-offset-1">
+          <span class="left glyphicon glyphicon-globe"></span>
+          <h2>Mediterranean, Seafood</h2>
+        </div>
+        <div class="col-sm-4">
+          <span class="left glyphicon glyphicon-map-marker"></span>
+          <h2>Queen Anne/Seattle Center</h2>
+        </div>
+        <div class="col-sm-4">
+          <span class="left glyphicon glyphicon-time"></span>
+          <h2>Dinner, Dinner</h2>
+        </div>
+      </div>
+      <hr />
+
+    </div>
+  </div>
+</div> 
