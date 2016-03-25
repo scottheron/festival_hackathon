@@ -1,15 +1,17 @@
-<form ng-submit="userLogin()">
-  <legend>Login</legend>
+<div id='loginPg'>
+  <form ng-submit="userLogin()">
+    <legend id='loginLegend'>Login</legend>
 
-  <div class="form-group">
-    <legend for="email">Email</legend>
-    <input type="email" class="form-control" id="email" placeholder="example@123.com" ng-model="user.email">
-  </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" id="email" placeholder="example@123.com" ng-model="user.email">
+    </div>
 
-  <div class="form-group">
-    <legend for="password">Password</legend>
-    <input type="password" class="form-control" id="password" placeholder="******" ng-model="user.password">
-  </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" placeholder="******" ng-model="user.password">
+    </div>
 
-  <button type="submit" class="btn btn-primary">Login</button>
-</form>
+    <button type="submit" class="btn btn-primary">Login</button>
+  </form>
+</div>
