@@ -12,7 +12,6 @@ angular.module('RestaurantCtrls', ['RestaurantServices'])
 //show a specific restaurant
 .controller('ShowCtrl', ['$scope', '$stateParams', 'Restaurant', function($scope, $stateParams, Restaurant) {
   $scope.restaurant = {};
-
   Restaurant.get({id: $stateParams.id}, function success(data) {
     $scope.restaurant = data;
   }, function error(data) {

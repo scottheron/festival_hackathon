@@ -18,6 +18,27 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/api/restaurants');
 
+if (titleArray.length == 0) {
+  request('http://srw.seattletimes.com/#/', function (error, response, data) {
+  if (!error && response.statusCode == 200) {
+        var $ = cheerio.load(data);
+
+        $('tbody tr').each(function(index, element) {
+          titleArray.push({ "name" : $(element).children('td').children('.post-title').text().trim(), 
+                            "cuisine" : $(element).attr('data-cuisine'),
+                            "neighborhood" :  $(element).attr('data-neighborhood'), 
+                            "meal" : $(element).attr('data-meals'),
+                            "link" : $(element).children('td').children('.post-title').attr('href')});
+        });
+        console.log(titleArray);
+
+      }
+      Restaurant.create(titleArray, function(err, restaurant) {
+        if (err) console.log(err);
+      });
+  });
+}
+
 app.use('/api/restaurants', expressJWT({secret: secret})); //using middleware on api/recipes, passing in our secret, protecting this route
 app.use('/api/users', expressJWT({secret: secret}) //same as above unless posting as seen on below line, which allows you to make an account
 .unless({path: ['/api/users'], method: 'post'}));
