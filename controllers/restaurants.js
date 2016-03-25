@@ -12,11 +12,18 @@ router.route('/')
     });
   })
   .post(function(req, res) {
-
     console.log(req.body);
     Restaurant.create(req.body, function(err, restaurant) {
       if (err) return res.status(500).send(err);
       res.send(restaurant);
+    });
+  });
+  
+router.route('/search')
+  .get(function(req, res){
+    Restaurant.find(req.body, function(err){
+      if (err) return res.status(500).send(err);
+      res.send({'message': 'success'});
     });
   });
 
