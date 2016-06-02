@@ -8,5 +8,4 @@ var RestaurantSchema = new mongoose.Schema({
   link: String
 });
 
-
 module.exports = mongoose.model('Restaurant', RestaurantSchema);
